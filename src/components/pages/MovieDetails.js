@@ -59,7 +59,6 @@ const MovieDetails = () => {
       )
   );
 
-  // Calculate rounded popularity percentage
   const roundedPopularity = Math.round(movieDetails.vote_average * 10);
 
   return (

@@ -20,7 +20,7 @@ export const searchMoviesByWord = async movieId => {
   return response.data;
 };
 
-export const handleSearch = async movieName => {
+export const getSearch = async movieName => {
   const response = await axios.get(`/search/movie?query=${movieName}`, params);
   return response.data.results;
 };

@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-import { handleSearch } from '../Api/Api';
+import { getSearch } from '../Api/Api';
 import { SearchForm } from '../SearchForm/SearchForm.js';
 import { MovieList } from '../MovieList/MovieList.js';
 
@@ -22,7 +22,7 @@ const Movies = () => {
     const search = async () => {
       try {
         setLoading(true);
-        const movies = await handleSearch(movieName);
+        const movies = await getSearch(movieName);
         setSearchResults(movies);
       } catch (error) {
         console.error(error);
@@ -43,7 +43,7 @@ const Movies = () => {
             style={{ height: 30, width: 300, marginTop: 15 }}
           />
         ) : searchResults.length === 0 && movieName ? (
-          <h2> Nothing found</h2>
+          <h2>Sorry! Nothing found! Try again! </h2>
         ) : (
           <MovieList films={searchResults} />
         )}

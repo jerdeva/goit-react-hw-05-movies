@@ -11,7 +11,7 @@ export const SearchForm = ({ value, onChange }) => {
       <MainTitle>Movie Search</MainTitle>
       <DebounceInput
         type="text"
-        debounceTimeout={500}
+        debounceTimeout={400}
         value={value}
         onChange={e => onChange(e.target.value)}
         placeholder="enter your reques"

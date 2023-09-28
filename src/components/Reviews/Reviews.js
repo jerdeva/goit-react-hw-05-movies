@@ -40,7 +40,7 @@ const Reviews = () => {
           </ul>
         </div>
       )}
-      {reviews.length === 0 && <div>We don't have reviews for this movie.</div>}
+      {reviews.length === 0 && <div>Sorry! We don't have reviews for this movie.</div>}
     </>
   );
 };
