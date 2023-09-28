@@ -4,6 +4,18 @@ import { searchMoviesByWord } from '../Api/Api';
 import Button from '../Button/Button';
 import { Loader } from '../Loader/Loader';
 
+import {
+  FilmNameTitle,
+  UserScoreTitle,
+  OverviewTitle,
+  OverviewParagrapher,
+  GenresTitle,
+  ProductionCompaniesListTitle,
+  AdditionalInformationTitle,
+  WrapperOne,
+  ImgWrapper,
+} from './MovieDetails.styled';
+
  const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -55,13 +67,24 @@ import { Loader } from '../Loader/Loader';
       <Link to={backLinkHref.current}>
         <Button text="Go back" />
       </Link>
-      <div backdrop={movieDetails.backdrop_path}>
+      <WrapperOne backdrop={movieDetails.backdrop_path}>
+        <ImgWrapper>
+          <img
+            src={
+              movieDetails.poster_path
+                ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
+                : `opps`
+            }
+            alt={movieDetails.title}
+            width={300}
+          />
+        </ImgWrapper>
         <div>
-          <h1>{movieDetails.title}</h1>
-          <h4>User score: {roundedPopularity}%</h4>
-          <h2>Overview</h2>
-          <p>{movieDetails.overview}</p>
-          <h2>Genres</h2>
+          <FilmNameTitle>{movieDetails.title}</FilmNameTitle>
+          <UserScoreTitle>User score: {roundedPopularity}%</UserScoreTitle>
+          <OverviewTitle>Overview</OverviewTitle>
+          <OverviewParagrapher>{movieDetails.overview}</OverviewParagrapher>
+          <GenresTitle>Genres</GenresTitle>
           <p>
             {movieDetails.genres.map(genre => (
               <span key={genre.id}> {genre.name}</span>
@@ -70,24 +93,18 @@ import { Loader } from '../Loader/Loader';
           {productionCompaniesList[0] !== null &&
             productionCompaniesList.length > 0 && (
               <>
-                <h2>Production companies</h2>
+                <ProductionCompaniesListTitle>
+                  Production companies
+                </ProductionCompaniesListTitle>
                 <div>{productionCompaniesList}</div>
               </>
             )}
         </div>
-        <div>
-          <img
-            src={
-              movieDetails.poster_path
-                ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
-                : `opps`
-            }
-            alt={movieDetails.title}
-          />
-        </div>
-      </div>
+      </WrapperOne>
       <hr />
-      <h3>Additional information</h3>
+      <AdditionalInformationTitle>
+        Additional information
+      </AdditionalInformationTitle>
       <Link to="cast">
         <Button text="Cast" />
       </Link>

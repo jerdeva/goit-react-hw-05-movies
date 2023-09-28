@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from '../Api/Api';
+import placeholder from './placeholder.jpg'
 
-
+import {
+  MovieCastTitle,
+  ListOfActors,
+  ImageWrapper,
+  ItemOfActors,
+  ActorName,
+} from './Cast.styled';
  const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
@@ -25,24 +32,24 @@ import { getMovieCredits } from '../Api/Api';
     <>
       {cast.length !== 0 && (
         <div>
-          <h2>Movie Cast</h2>
-          <ul>
+          <MovieCastTitle>Movie Cast</MovieCastTitle>
+          <ListOfActors>
             {cast.map(actor => (
-              <li key={actor.id}>
-                <img
+              <ItemOfActors key={actor.id}>
+                <ImageWrapper
                   width="200px"
                   height="300px"
                   src={
                     actor.profile_path
                       ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
-                      : `opps`
+                      : `${placeholder}`
                   }
                   alt={actor.original_name}
                 />
-                <p>{actor.name}</p>
-              </li>
+                <ActorName>{actor.name}</ActorName>
+              </ItemOfActors>
             ))}
-          </ul>
+          </ListOfActors>
         </div>
       )}
       {cast.length === 0 && <div>We don't have cast for this movie.</div>}

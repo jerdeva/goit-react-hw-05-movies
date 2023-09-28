@@ -1,5 +1,5 @@
 import { DebounceInput } from 'react-debounce-input';
-import {MainTitle} from './SearchForm.styled'
+import { MainTitle, Form } from './SearchForm.styled';
 
 
 export const SearchForm = ({ value, onChange }) => {
@@ -8,7 +8,7 @@ export const SearchForm = ({ value, onChange }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <MainTitle>Movie Search</MainTitle>
       <DebounceInput
         type="text"
@@ -17,6 +17,6 @@ export const SearchForm = ({ value, onChange }) => {
         onChange={e => onChange(e.target.value)}
         placeholder="enter your reques"
       />
-    </form>
+    </Form>
   );
 };

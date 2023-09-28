@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(90deg, #faf0cd, #fab397);
 }
 
 code {
@@ -39,12 +40,7 @@ a:focus {
   background: #bae498;
 }
 
-a:hover {
-  border-bottom: 1px solid;
-  background: #cdfeaa;
-}
 
 a:active {
-  background: #265301;
-  color: #cdfeaa;
+  color: #415a30;
 }
