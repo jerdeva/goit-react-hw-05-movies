@@ -1,0 +1,104 @@
+import React, { useEffect, useState, useRef, Suspense } from 'react';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { searchMoviesByWord } from '../Api/Api';
+import Button from '../Button/Button';
+import { Loader } from '../Loader/Loader';
+
+ const MovieDetails = () => {
+  const { movieId } = useParams();
+  const [movieDetails, setMovieDetails] = useState(null);
+  const location = useLocation();
+  const backLinkHref = useRef(location.state?.from || '/');
+
+  useEffect(() => {
+    const movieDetails = async () => {
+      try {
+        const movie = await searchMoviesByWord(movieId);
+        setMovieDetails(movie);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    movieDetails();
+  }, [movieId]);
+
+  if (!movieDetails) {
+    return <Loader />;
+  }
+
+  const productionCompaniesList = movieDetails.production_companies?.map(
+    ({ id, logo_path, name }) =>
+      logo_path && (
+        <li key={id}>
+          {logo_path && (
+            <img
+              src={`https://image.tmdb.org/t/p/w500${logo_path}`}
+              alt={name}
+              style={{
+                maxHeight: 50,
+                maxWidth: 200,
+                marginRight: 30,
+                marginTop: 10,
+              }}
+            />
+          )}
+        </li>
+      )
+  );
+
+  // Calculate rounded popularity percentage
+  const roundedPopularity = Math.round(movieDetails.vote_average * 10);
+
+  return (
+    <div>
+      <Link to={backLinkHref.current}>
+        <Button text="Go back" />
+      </Link>
+      <div backdrop={movieDetails.backdrop_path}>
+        <div>
+          <h1>{movieDetails.title}</h1>
+          <h4>User score: {roundedPopularity}%</h4>
+          <h2>Overview</h2>
+          <p>{movieDetails.overview}</p>
+          <h2>Genres</h2>
+          <p>
+            {movieDetails.genres.map(genre => (
+              <span key={genre.id}> {genre.name}</span>
+            ))}
+          </p>
+          {productionCompaniesList[0] !== null &&
+            productionCompaniesList.length > 0 && (
+              <>
+                <h2>Production companies</h2>
+                <div>{productionCompaniesList}</div>
+              </>
+            )}
+        </div>
+        <div>
+          <img
+            src={
+              movieDetails.poster_path
+                ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
+                : `opps`
+            }
+            alt={movieDetails.title}
+          />
+        </div>
+      </div>
+      <hr />
+      <h3>Additional information</h3>
+      <Link to="cast">
+        <Button text="Cast" />
+      </Link>
+      <Link to="reviews">
+        <Button text="Reviews" />
+      </Link>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </div>
+  );
+};
+
+export default MovieDetails;
