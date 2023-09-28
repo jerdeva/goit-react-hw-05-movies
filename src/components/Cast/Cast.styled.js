@@ -6,22 +6,21 @@ export const MovieCastTitle = styled.h1`
 `;
 
 export const ListOfActors = styled.ul`
-display:flex ;
-flex-wrap: wrap;
-margin-left: 0;
-gap: 8px 28px ;
-`
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  gap: 8px 28px;
+`;
 
 export const ItemOfActors = styled.li`
-width: 200px;
+  width: 200px;
 `;
 
 export const ImageWrapper = styled.img`
-border: black 1px solid;
-`
+  border: black 1px solid;
+`;
 
 export const ActorName = styled.p`
   font-size: 20px;
   color: #680747;
 `;
-

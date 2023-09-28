@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { Item } from './MovieList.styled';
 
-
-
 export const MovieList = ({ films }) => {
   const location = useLocation();
 

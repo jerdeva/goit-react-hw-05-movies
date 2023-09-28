@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const FilmNameTitle = styled.h1`
   color: #53a8b6;
 `;
@@ -17,7 +16,8 @@ export const OverviewParagrapher = styled.p`
 `;
 
 export const GenresTitle = styled.h2`
-  color: #53a8b6;` ;
+  color: #53a8b6;
+`;
 
 export const ProductionCompaniesListTitle = styled.h3`
   color: #53a8b6;
@@ -28,11 +28,9 @@ export const AdditionalInformationTitle = styled.h3`
 `;
 
 export const WrapperOne = styled.div`
-display: flex;
-`
+  display: flex;
+`;
 
 export const ImgWrapper = styled.div`
-margin: 24px;
-`
-
-
+  margin: 24px;
+`;

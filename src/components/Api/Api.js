@@ -20,23 +20,17 @@ export const searchMoviesByWord = async movieId => {
   return response.data;
 };
 
-
-
 export const handleSearch = async movieName => {
   const response = await axios.get(`/search/movie?query=${movieName}`, params);
   return response.data.results;
 };
 
-
-export const getMovieCredits  = async movieId => {
+export const getMovieCredits = async movieId => {
   const response = await axios.get(`movie/${movieId}/credits?`, params);
   return response.data.cast;
 };
-
 
 export const getMovieReviews = async movie_id => {
   const response = await axios.get(`movie/${movie_id}/reviews?`, params);
   return response.data.results;
 };
-
-

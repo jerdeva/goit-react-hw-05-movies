@@ -16,7 +16,7 @@ import {
   ImgWrapper,
 } from './MovieDetails.styled';
 
- const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const location = useLocation();

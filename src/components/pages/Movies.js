@@ -1,13 +1,13 @@
- import React, { useState, useEffect } from 'react';
- import { useSearchParams } from 'react-router-dom';
- import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
- import 'react-loading-skeleton/dist/skeleton.css';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
- import { handleSearch } from '../Api/Api';
- import { SearchForm } from '../SearchForm/SearchForm.js';
- import {MovieList} from '../MovieList/MovieList.js';
+import { handleSearch } from '../Api/Api';
+import { SearchForm } from '../SearchForm/SearchForm.js';
+import { MovieList } from '../MovieList/MovieList.js';
 
- const Movies = () => {
+const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get('query') || '';
@@ -52,4 +52,4 @@
   );
 };
 
- export default Movies;
+export default Movies;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieReviews } from '../Api/Api'
+import { getMovieReviews } from '../Api/Api';
 import {
   MovieReviewsTitle,
   ReviewsItem,
@@ -8,7 +8,7 @@ import {
   ReviewsItemContent,
 } from './Reviews.styled';
 
- const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
 
@@ -40,11 +40,9 @@ import {
           </ul>
         </div>
       )}
-      {reviews.length === 0 && (
-        <div>We don't have reviews for this movie.</div>
-      )}
+      {reviews.length === 0 && <div>We don't have reviews for this movie.</div>}
     </>
   );
- };
+};
 
 export default Reviews;

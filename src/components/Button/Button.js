@@ -1,4 +1,4 @@
-import {Btn} from './Button.styled'
+import { Btn } from './Button.styled';
 
 const Button = ({ text }) => {
   return <Btn type="button">{text}</Btn>;

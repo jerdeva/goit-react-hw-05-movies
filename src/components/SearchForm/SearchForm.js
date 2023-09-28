@@ -1,7 +1,6 @@
 import { DebounceInput } from 'react-debounce-input';
 import { MainTitle, Form } from './SearchForm.styled';
 
-
 export const SearchForm = ({ value, onChange }) => {
   const handleSubmit = e => {
     e.preventDefault();

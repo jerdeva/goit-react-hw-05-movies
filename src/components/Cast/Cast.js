@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from '../Api/Api';
-import placeholder from './placeholder.jpg'
+import placeholder from './placeholder.jpg';
 
 import {
   MovieCastTitle,
@@ -10,12 +10,11 @@ import {
   ItemOfActors,
   ActorName,
 } from './Cast.styled';
- const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
-
     const movieCast = async () => {
       try {
         const response = await getMovieCredits(movieId);
@@ -55,9 +54,6 @@ import {
       {cast.length === 0 && <div>We don't have cast for this movie.</div>}
     </>
   );
- };
+};
 
 export default Cast;
-
-
-

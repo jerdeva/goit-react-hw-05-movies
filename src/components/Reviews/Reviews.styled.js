@@ -1,5 +1,4 @@
 import styled from 'styled-components';
- 
 
 export const MovieReviewsTitle = styled.h1`
   color: #53a8b6;
@@ -21,4 +20,3 @@ export const ReviewsItemContent = styled.h3`
   color: darkblue;
   font-weight: 400;
 `;
-

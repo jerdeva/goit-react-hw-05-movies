@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-import {MovieList} from '../MovieList/MovieList';
-import { getTrendingMovies } from '../Api/Api'
+import { MovieList } from '../MovieList/MovieList';
+import { getTrendingMovies } from '../Api/Api';
 
-import {MainTitle} from './Home.styled'
+import { MainTitle } from './Home.styled';
 
-
- const Home = () => {
-    const [trendingMovies, setTrendingMovies] = useState([]);
+const Home = () => {
+  const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +20,8 @@ import {MainTitle} from './Home.styled'
       }
     };
 
-    fetchData();  }, []);
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -38,6 +38,6 @@ import {MainTitle} from './Home.styled'
       </SkeletonTheme>
     </div>
   );
- };
+};
 
 export default Home;
