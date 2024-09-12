@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(90deg, #faf0cd, #fab397);
+  background: linear-gradient(90deg, #f4f1e6, #ebdad2);
 }
 
 code {
@@ -28,19 +28,27 @@ a {
 }
 
 a:link {
-  color: #265301;
+  color: rgba(106, 191, 235, 1);
+  
 }
 
 a:visited {
-  color: #437a16;
+  color: rgba(106, 191, 235, 1);
+  
 }
 
 a:focus {
   border-bottom: 1px solid;
-  background: #bae498;
-}
+   color:     rgb(10, 16, 19);
+  }
+   
 
 
 a:active {
-  color: #415a30;
+color: rgb(11, 100, 184);
+}
+
+
+li{
+  list-style: none;
 }

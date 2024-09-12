@@ -15,6 +15,11 @@ export const getTrendingMovies = async () => {
   return response.data.results;
 };
 
+export const getTrendingMoviesWeek = async () => {
+  const response = await axios.get(`trending/movie/week`, params);
+  return response.data.results;
+};
+
 export const searchMoviesByWord = async movieId => {
   const response = await axios.get(`/movie/${movieId}`, params);
   return response.data;

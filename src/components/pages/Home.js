@@ -3,12 +3,16 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 import { MovieList } from '../MovieList/MovieList';
-import { getTrendingMovies } from '../Api/Api';
+import { getTrendingMovies, getTrendingMoviesWeek } from '../Api/Api';
 
-import { MainTitle } from './Home.styled';
+import { MainTitle, Wrapper } from './Home.styled';
+
+
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [trendingMoviesWeek, setTrendingMoviesWeek] = useState([]);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,20 +27,39 @@ const Home = () => {
     fetchData();
   }, []);
 
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const moviesWeek = await getTrendingMoviesWeek();
+          setTrendingMoviesWeek(moviesWeek);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      fetchData();
+    }, []);
+
   return (
-    <div>
-      <MainTitle>Trending Movies</MainTitle>
-      <SkeletonTheme baseColor="#dddddd" highlightColor="#a5a5a5">
-        {trendingMovies.length === 0 ? (
-          <Skeleton
-            count={15}
-            style={{ height: 30, width: 300, marginTop: 15 }}
-          />
-        ) : (
-          <MovieList films={trendingMovies} />
-        )}
-      </SkeletonTheme>
-    </div>
+    <>
+      <Wrapper>
+        <MainTitle>Trending Movies Today:</MainTitle>
+        <SkeletonTheme baseColor="#dddddd" highlightColor="#a5a5a5">
+          {trendingMovies.length === 0 ? (
+            <Skeleton
+              count={15}
+              style={{ height: 30, width: 300, marginTop: 15 }}
+            />
+          ) : (
+            <>
+              <MovieList films={trendingMovies} />
+              <MainTitle>Trending Movies Week:</MainTitle>
+              <MovieList films={trendingMoviesWeek} />
+            </>
+          )}
+        </SkeletonTheme>
+      </Wrapper>
+    </>
   );
 };
 

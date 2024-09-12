@@ -1,14 +1,14 @@
-import React, {lazy, Suspense} from 'react';
-import {ListNav , ListItem} from './App.styled'
+import React, {
+  lazy,
+} from 'react';
 
- import { NavLink, Navigate, Route, Routes } from "react-router-dom";
+import { Layout } from './Layout/Layout';
+
+import {
+  Navigate, Route, Routes
+} from "react-router-dom";
 
 
-//  import Home from './pages/Home'
-//  import Movies from './pages/Movies'
-//  import MovieDetails from './pages/MovieDetails'
-//  import Reviews from './Reviews/Reviews'
-// import Cast from './Cast/Cast'
  
 const Home = lazy(() => import('./pages/Home'))
 const Movies = lazy(() => import('./pages/Movies'))
@@ -18,18 +18,9 @@ const Cast = lazy(() => import('./Cast/Cast'))
 
 
  const App = () => {
-  return (<div>
-          <ListNav>
-        <ListItem>
-          <NavLink to='/'> Home</NavLink>
-        </ListItem>
-        <ListItem>
-          <NavLink to='/movies'>Movies</NavLink>
-        </ListItem>
-    </ListNav>
-        <Suspense fallback={<div>Loading...</div>}>
- <Routes>
-      <Route path='/'>
+   return (<div>
+        <Routes>
+        <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId" element={<MovieDetails />}>
@@ -39,7 +30,6 @@ const Cast = lazy(() => import('./Cast/Cast'))
         <Route path="*" element={<Navigate to='/' />} />
       </Route>
       </Routes>
-      </Suspense>
       </div>
 
   );
