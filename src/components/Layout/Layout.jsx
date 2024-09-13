@@ -11,7 +11,7 @@ export const Layout = ()=>{
                     <Header>
                     <ListNav>
                         <ListItem to="/" end>Home</ListItem>
-                        <ListItem to="/movies">Movie</ListItem>
+                        <ListItem to="/movies">Search</ListItem>
                     </ListNav>
                 </Header>
                 </WrapperL>
