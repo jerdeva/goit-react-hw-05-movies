@@ -12,7 +12,8 @@ export const WrapperL = styled.div`
   `
 
 export const ListItem = styled(NavLink)`
-  padding: 8px 16px;
+  padding: 14px 14px;
+  font-size: 24px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;

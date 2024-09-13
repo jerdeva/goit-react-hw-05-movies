@@ -53,7 +53,7 @@ const Home = () => {
           ) : (
             <>
               <MovieList films={trendingMovies} />
-              <MainTitle>Trending Movies Week:</MainTitle>
+              <MainTitle>Trending Movies Of The Week:</MainTitle>
               <MovieList films={trendingMoviesWeek} />
             </>
           )}

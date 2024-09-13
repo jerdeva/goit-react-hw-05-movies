@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const GeneralWrapper = styled.div`
+/* display: flex; */
+`;
+
 export const FilmNameTitle = styled.h1`
   color: #53a8b6;
 `;
@@ -29,6 +33,7 @@ export const AdditionalInformationTitle = styled.h3`
 
 export const WrapperOne = styled.div`
   display: flex;
+  padding: 40px 20px;
 `;
 
 export const ImgWrapper = styled.div`

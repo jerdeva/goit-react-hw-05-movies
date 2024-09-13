@@ -6,6 +6,7 @@ import {
   ReviewsItem,
   ReviewsItemAuthor,
   ReviewsItemContent,
+  ReviewsItemEmpty,
 } from './Reviews.styled';
 
 const Reviews = () => {
@@ -40,7 +41,11 @@ const Reviews = () => {
           </ul>
         </div>
       )}
-      {reviews.length === 0 && <div>Sorry! We don't have reviews for this movie.</div>}
+      {reviews.length === 0 && (
+        <ReviewsItemEmpty>
+          Sorry! We don't have reviews for this movie.
+        </ReviewsItemEmpty>
+      )}
     </>
   );
 };

@@ -20,3 +20,11 @@ export const ReviewsItemContent = styled.h3`
   color: darkblue;
   font-weight: 400;
 `;
+
+export const ReviewsItemEmpty = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  color: #064e8a;
+  margin: 40px;
+`;

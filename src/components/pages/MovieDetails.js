@@ -14,6 +14,7 @@ import {
   AdditionalInformationTitle,
   WrapperOne,
   ImgWrapper,
+  GeneralWrapper,
 } from './MovieDetails.styled';
 
 const MovieDetails = () => {
@@ -62,7 +63,7 @@ const MovieDetails = () => {
   const roundedPopularity = Math.round(movieDetails.vote_average * 10);
 
   return (
-    <div>
+    <GeneralWrapper>
       <Link to={backLinkHref.current}>
         <Button text="Go back" />
       </Link>
@@ -113,7 +114,7 @@ const MovieDetails = () => {
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-    </div>
+    </GeneralWrapper>
   );
 };
 
