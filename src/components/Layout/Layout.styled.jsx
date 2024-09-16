@@ -12,7 +12,7 @@ export const WrapperL = styled.div`
   `
 
 export const ListItem = styled(NavLink)`
-  padding: 14px 14px;
+  padding: 14px px;
   font-size: 24px;
   border-radius: 4px;
   text-decoration: none;
@@ -25,7 +25,7 @@ export const ListItem = styled(NavLink)`
 `;
 
 export const Container = styled.div`
-max-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
   height: 100vh;
@@ -48,6 +48,16 @@ max-width: 1200px;
     opacity: 0.6;
     filter: blur(1px);
   }
+
+    
+    /* @media (max-width: 1200px) {
+      max-width: 750px;
+  }
+
+
+    @media (max-width: 480px) {
+      max-width: 450px;
+  } */
 `;
 
 
@@ -58,9 +68,10 @@ export const Header = styled.header`
   padding: 12px 24px;
   margin-bottom: 16px;
   border-bottom: 1px solid #3b8fa6;
-
   > nav {
     display: flex;
+    gap: 0 12px;
+
   }
 
 `;

@@ -9,7 +9,7 @@ export const ListOfActors = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin-left: 0;
-  gap: 8px 28px;
+  gap: 28px 28px;
 `;
 
 export const ItemOfActors = styled.li`
@@ -21,7 +21,7 @@ export const ImageWrapper = styled.img`
 `;
 
 export const ActorName = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   color: #680747;
 `;
 
@@ -43,6 +43,12 @@ export const Btn = styled.button`
   margin-right: 12px;
   margin-bottom: 4px;
   padding: 12px 24px;
-
 `;
 
+export const CastItemEmpty = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  color: #064e8a;
+  margin: 40px;
+`;

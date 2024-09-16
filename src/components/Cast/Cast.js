@@ -12,6 +12,7 @@ import {
   ActorName,
   Pagination,
   Btn,
+  CastItemEmpty,
 } from './Cast.styled';
 
 const Cast = () => {
@@ -91,7 +92,7 @@ const Cast = () => {
         </div>
       )}
       {cast.length === 0 && (
-        <div>Sorry! We don't have cast for this movie.</div>
+        <CastItemEmpty>Sorry! We don't have cast for this movie.</CastItemEmpty>
       )}
     </>
   );

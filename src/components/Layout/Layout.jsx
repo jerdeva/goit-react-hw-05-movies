@@ -6,16 +6,17 @@ import {ListNav,ListItem, Container, Header, FooterText, WrapperL} from './Layou
 
 export const Layout = ()=>{
     return (
-        <>
+                    <>
                 <WrapperL>
                     <Header>
                     <ListNav>
                         <ListItem to="/" end>Home</ListItem>
-                        <ListItem to="/movies">Search</ListItem>
+                        <ListItem to="/movies">Movie</ListItem>
                     </ListNav>
                 </Header>
                 </WrapperL>
-            <Container>
+                    <Container>
+
                 <Suspense fallback={<div>Loading...</div>}>
                     <Outlet/>
                 </Suspense>
@@ -23,6 +24,6 @@ export const Layout = ()=>{
                     <FooterText>&copy; {new Date().getFullYear()} Movie Search</FooterText>
                 </footer>
             </Container>
-        </>
+            </>
 )
 }

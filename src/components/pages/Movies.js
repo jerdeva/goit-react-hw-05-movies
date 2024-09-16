@@ -6,6 +6,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { getSearch } from '../Api/Api';
 import { SearchForm } from '../SearchForm/SearchForm.js';
 import { MovieList } from '../MovieList/MovieList.js';
+import { ReviewsItemEmpty } from 'components/Reviews/Reviews.styled';
 
 const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -43,7 +44,7 @@ const Movies = () => {
             style={{ height: 30, width: 300, marginTop: 15 }}
           />
         ) : searchResults.length === 0 && movieName ? (
-          <h2>Sorry! Nothing found! Try again! </h2>
+          <ReviewsItemEmpty>Sorry! Nothing found! Try again! </ReviewsItemEmpty>
         ) : (
           <MovieList films={searchResults} />
         )}

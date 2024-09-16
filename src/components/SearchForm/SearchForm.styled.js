@@ -16,12 +16,14 @@ export const Form = styled.form`
   margin-bottom: 50px;
 
   input {
-    font-size: 16px;
+    font-size: 20px;
     padding: 8px 32px 8px 8px;
     width: 250px;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #064e8a;
     outline: none;
+    color: black;
+    font-weight: 500;
   }
 `;
