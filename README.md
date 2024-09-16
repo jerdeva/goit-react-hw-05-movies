@@ -43,7 +43,9 @@ https://developer.themoviedb.org/docs/getting-started
 Code Splitting (разделение кода)
 Добавлена асинхронная загрузка JS-кода для маршрутов приложения используется React.lazy() и <Suspense>.
 
+###
 
-
-
+![Image alt](//public/Снимок%20экрана%202024-09-16%20в%2022.43.26.png)
+![Image alt](//public/Снимок%20экрана%202024-09-16%20в%2022.44.47.png)
+![Image alt](//public/Снимок%20экрана%202024-09-16%20в%2022.45.01.png)
 
